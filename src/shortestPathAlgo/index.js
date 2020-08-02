@@ -8,19 +8,16 @@ export default function BFS(grid, start, end, callback) {
         this.enqueue = function(value) {
             this.items.push(value);
         }
-
         this.dequeue = function() {
             if (!this.isEmpty()) {
                 return this.items.shift();
             }
         }
-
         this.front = function() {
             if (!this.isEmpty()) {
                 return this.items[0];
             }
         }
-
         this.isEmpty = function() {
             return this.items.length === 0;
         }
