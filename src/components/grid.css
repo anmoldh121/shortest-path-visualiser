@@ -1,0 +1,48 @@
+
+.list {
+    float: left;
+    margin: 0;
+    display: block;
+    /* background: red; */
+    margin-top: 0;
+}
+
+#grid .list:nth-child(2n+2) {
+    margin: 20px 0;
+    margin-left: -13px;
+}
+#grid .list:nth-child(n+1) {
+    margin-left: -13px;
+}
+
+
+
+#grid-row {
+    display: flex;
+    flex-direction: column;    
+}
+#grid-row #grid:nth-child(2n+2) {
+    /* margin-top: -53px; */
+    margin-top: -43px;
+}
+#grid-row #grid:first-child {
+    /* margin-top: 53px; */
+    margin-top: 43px;
+}
+#grid-row #grid:nth-child(n+1) {
+    /* margin-top: -53px; */
+    margin-top: -43px;
+}
+
+#grid {
+    position: relative;
+    width: 100%;
+    margin:0;
+    padding: 0; 
+    margin-right: 13px;
+}
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
