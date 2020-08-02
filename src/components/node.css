@@ -17,8 +17,8 @@
   left: 3px;
 }
 .points {
-  margin-left: 18dpx;
-  margin-top: 15px;
-  user-select: none;
-  color: white;
+  margin-left: 8px;
+  margin-top: 5px;
+  color: red;
+  font-size: 25px;
 }
