@@ -25,7 +25,7 @@ export default function BFS(grid, start, end, callback) {
 
     function exploreNeighbor(q, current) {
         let vectors;
-        if (current.y%2 == 0) {
+        if (current.y%2 === 0) {
             vectors = evenVector;
         }
         else {
@@ -34,7 +34,7 @@ export default function BFS(grid, start, end, callback) {
         vectors.forEach((vector) => {
             let next = {x: vector[0] + current.x, y: vector[1] + current.y};
             if (next.x >=0 && next.x <= N-1 && next.y >= 0 && next.y <= M-1) {
-                if (visited[next.x][next.y] == false && !grid[next.x][next.y].selected) {
+                if (visited[next.x][next.y] === false && !grid[next.x][next.y].selected) {
                     q.enqueue(next);
                     prev[next.x.toString() + next.y.toString()] = current;
                     visited[next.x][next.y] = true;
