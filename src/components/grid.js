@@ -15,6 +15,12 @@ export default function Grid() {
         getHex();
     }, []); 
 
+    React.useEffect(() => {
+        if(state.gridResetFlag) {
+            getHex();
+        }
+    }, [state.gridResetFlag])
+
     const getHex = () => {
         let width = Math.floor(window.innerWidth/32);
         let height = Math.floor(window.innerHeight/50);
@@ -48,6 +54,7 @@ export default function Grid() {
         dispatch({ type: "SETDATA", payload: row });
         dispatch({ type: "SETSTART", payload: { x: startRow, y: startCol } });
         dispatch({ type: "SETEND", payload: {x: endRow, y: endCol} });
+        dispatch({ type: "RESET_GRID", payload: false })
     }
     const changeNodeColor = (colIndex, rowIndex) => {
         let rowData = [...state.data];
@@ -68,10 +75,7 @@ export default function Grid() {
         }
     } 
     const onMouseEnter = (colIndex, rowIndex) => {
-        console.log(ifPointsClicked);
-        console.log(mouseClickFlag);
         if (mouseClickFlag) {
-            console.log(ifPointsClicked);
             if (ifPointsClicked) {
                 console.log("herer");
                 if (state.data[currentPoint.colIndex][currentPoint.rowIndex].isStart) {

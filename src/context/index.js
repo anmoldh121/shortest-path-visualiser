@@ -3,7 +3,8 @@ import React from 'react';
 const initialState = {
     data: [],
     start: {},
-    end: {}
+    end: {},
+    gridResetFlag: false,
 };
 
 const store = React.createContext(initialState);
@@ -19,6 +20,8 @@ const StateProvider = ({children}) => {
                 return {...state, start: action.payload};
             case "SETEND":
                 return {...state, end: action.payload};
+            case "RESET_GRID":
+                return {...state, gridResetFlag: action.payload};
             default:
                 return {...state};
         }

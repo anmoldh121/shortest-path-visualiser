@@ -6,7 +6,7 @@ export default function Labels() {
         <div className ="label-container">
             <div className="label-desc">
                 <div className ="label">
-                    <i class="fas fa-play"></i>
+                    <i className="fas fa-play"></i>
                 </div>
                 <div className="desc"> 
                     Start Point
@@ -14,7 +14,7 @@ export default function Labels() {
             </div>
             <div className="label-desc">
                 <div className ="label">
-                    <i class="fas fa-genderless"></i>
+                    <i className="fas fa-genderless"></i>
                 </div>
                 <div className="desc"> 
                     End Point
@@ -25,6 +25,13 @@ export default function Labels() {
                 </div>
                 <div className="desc"> 
                     Selected Node
+                </div>  
+            </div>
+            <div className="label-desc">
+                <div className ="label" style={{padding: "10px 10px", margin: "0 10px", background: "red"}}>
+                </div>
+                <div className="desc"> 
+                    Path
                 </div>  
             </div>
         </div>

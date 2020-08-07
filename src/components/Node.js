@@ -11,10 +11,10 @@ export default function Node(props) {
             "white"}}>
                 {props.properties.isStart? 
                 <div className="points">
-                    <i class="fas fa-play"></i>
+                    <i className="fas fa-play"></i>
                 </div> : props.properties.isEnd ? 
                 <div className="points" style={{fontSize: "40px", marginTop: "-4px", marginLeft: "6px"}}>
-                    <i class="fas fa-genderless"></i>
+                    <i className="fas fa-genderless"></i>
                 </div> : ""}
             </div>
         </div>

@@ -13,6 +13,7 @@
   clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
   background: white;
   cursor: pointer;
+  transition: all 1s ease-out;
   top: 3px;
   left: 3px;
 }

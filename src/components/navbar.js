@@ -24,6 +24,9 @@ export default function Navbar(props) {
             }
         })
     }
+    const resetGrid = () => {
+        dispatch({ type: "RESET_GRID", payload: true })
+    }
     const findPath = (prev, start, endKey) => {
         let path = [];
         while (true) {
@@ -43,7 +46,7 @@ export default function Navbar(props) {
             <div className="nav-elements">element</div>
             <div className="nav-elements">element</div>
             <div className="nav-elements" onClick={runAlgo}>RUN</div>
-            <div className="nav-elements">element</div>
+            <div className="nav-elements" onClick={resetGrid}>RESET</div>
         </div>
     );
 }
