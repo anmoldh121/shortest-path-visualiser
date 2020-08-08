@@ -63,7 +63,7 @@ export default function BFS(grid, start, end, callback) {
     for (let j=0; j<N; j++) {
         visited.push(Object.assign([], visitedHelper));
     }
-    visited[start.x, start.y] = true;
+    visited[start.x][start.y] = true;
 
     while (!q.isEmpty()) {
         let current = q.front();
