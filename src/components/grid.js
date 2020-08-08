@@ -11,17 +11,7 @@ export default function Grid() {
     const [ifPointsClicked, setPointsClicked] = React.useState(false);
     const [currentPoint, setCurrentPoint] = React.useState({});
 
-    React.useEffect(() => {
-        getHex();
-    }, []); 
-
-    React.useEffect(() => {
-        if(state.gridResetFlag) {
-            getHex();
-        }
-    }, [state.gridResetFlag])
-
-    const getHex = () => {
+    const getHex = React.useCallback(() => {
         let width = Math.floor(window.innerWidth/32);
         let height = Math.floor(window.innerHeight/50);
         let startCol = Math.floor(width/4);
@@ -33,7 +23,7 @@ export default function Grid() {
         let row = [];
         
         for (let i=0; i<height; i++) {
-            col = Array();
+            col = [];
             for (let j=0; j<width; j++) {
                 col.push({
                     selected: false,
@@ -55,7 +45,18 @@ export default function Grid() {
         dispatch({ type: "SETSTART", payload: { x: startRow, y: startCol } });
         dispatch({ type: "SETEND", payload: {x: endRow, y: endCol} });
         dispatch({ type: "RESET_GRID", payload: false })
-    }
+    }, [dispatch]);
+
+    React.useEffect(() => {
+        getHex();
+    }, [getHex]); 
+
+    React.useEffect(() => {
+        if(state.gridResetFlag) {
+            getHex();
+        }
+    }, [state.gridResetFlag, getHex])
+
     const changeNodeColor = (colIndex, rowIndex) => {
         let rowData = [...state.data];
         rowData[colIndex][rowIndex].selected = true;
