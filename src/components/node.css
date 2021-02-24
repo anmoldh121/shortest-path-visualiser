@@ -1,0 +1,25 @@
+.hexagon {
+  position: relative;
+  width: 42px;
+  height: 42px;    
+  clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+  background: #E0E0E0;
+  cursor: pointer;
+}
+.inner-hex {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+  background: white;
+  cursor: pointer;
+  transition: all 1s ease-out;
+  top: 3px;
+  left: 3px;
+}
+.points {
+  margin-left: 8px;
+  margin-top: 5px;
+  color: red;
+  font-size: 25px;
+}
